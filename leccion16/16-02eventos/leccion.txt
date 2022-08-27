@@ -1,0 +1,204 @@
+evento on click
+ <body>
+    <h1 id="title"> DOM management</h1>
+    <br>
+    <div id="show">
+
+    </div>
+    <script>
+      document.getElementById('title').onclick= changeText;
+      
+
+      function changeText(){
+          document.getElementById('show').innerHTML='New Title'
+      }
+    </script>
+  </body>
+
+  //ONLOAD 
+    <body onload="enter()">
+    <h1 id="title"> DOM management</h1>
+    <br>
+    <div id="show">
+
+    </div>
+    <script>
+        function enter(){
+
+            alert('by logging on to the website');
+            // revisar si esta habilitadas las cookies 
+            let text ='';
+
+            if(navigator.cookieEnabled){
+                text = 'cookies are enabled';
+            }else{
+                text= ' cookies are not enabled'
+            }
+
+            document.getElementById('show').innerHTML=text;
+        }
+    </script>
+  </body>
+
+
+  // onvhange cambio de datos en un input 
+  <body>
+    <h1 id="title"> DOM management</h1>
+    <br>
+    Name : <input type="text" id="name" onchange="convert()"/>
+    <script>
+         function convert(){
+           let name = document.getElementById('name');
+           name.value = name.value.toUpperCase();
+         }
+    </script>
+  </body>
+
+  //onmouseover funcion cuando se pasa el mouse sobre algun texto 
+  //onmouseout  funcion cuando se quita el mouse del texto 
+   <body>
+    <h1 id="title" onmouseover="red(this)" onmouseout="blue(this)">
+      DOM management
+    </h1>
+    <br />
+    <script>
+      function red(red) {
+        red.style.color = "red";
+      }
+
+      function blue(blue){
+        blue.style.color= 'blue';
+      }
+    </script>
+  </body> 
+
+  // mas eventos click
+  <body>
+    <h1 id="title" onmousedown="red(this)" onmouseup="blue(this)" onclick="green(this)">
+      DOM management
+    </h1>
+    <br />
+    <script>
+      function red(red) {
+        console.log('onmouse down cambio a rojo')
+        red.style.color = "red";
+      }
+
+      function blue(blue) {
+        console.log(' onmouseup cambio a azul ')
+        blue.style.color = "blue";
+      }
+
+      function green(green){
+        console.log('onclick cambio a verde')
+        green.style.color='green'
+      }
+    </script>
+  </body>
+
+  // cambiar color de un input cuando se da click y regresar color
+    <body>
+    <h1 id="title">
+      DOM management
+    </h1>
+    <br />
+    Name: <input type="text" onfocus="change(this)" onblur="returnto(this)">
+    <br><br>
+    last name : <input type="text" onfocus="change(this)" onblur="returnto(this)">
+    <script>
+     function change(elementInput){
+       elementInput.style.background= 'yellow';
+     }
+
+     function returnto(elementInput){
+       elementInput.style.background='white';
+     }
+    </script>
+  </body>
+
+//Event listener  para cambiar fondo de un input y luego regresar al mismo color
+ <body>
+    <h1 id="title">
+      DOM management
+    </h1>
+    <br />
+    Name: <input type="text" id="name">
+    <br><br>
+    last name : <input type="text" id="lastName">
+    <script>
+      document.getElementById('name').addEventListener('focus', change);
+      document.getElementById('name').addEventListener('blur', returnto);
+
+      document.getElementById('lastName').addEventListener('focus', change);
+      document.getElementById('lastName').addEventListener('blur', returnto);
+      
+      function change(event){
+           let component= event.target;
+           component.style.background='yellow';
+      }
+
+      function returnto(event){
+         let component = event.target;
+         component.style.background='white';
+      }
+    </script>
+  </body>
+
+  // lo mismo que lo anterior pero con funcion flecha para el name 
+    <body>
+    <h1 id="title">
+      DOM management
+    </h1>
+    <br />
+    Name: <input type="text" id="name">
+    <br><br>
+    last name : <input type="text" id="lastName">
+    <script>
+      document.getElementById('name').addEventListener('focus', (event)=>{
+        let component = event.target;
+        component.style.background='yellow';
+
+      });
+      document.getElementById('name').addEventListener('blur',(event)=>{
+        let component = event.target;
+        component.style.background='white';
+      });
+
+      document.getElementById('lastName').addEventListener('focus', change);
+      document.getElementById('lastName').addEventListener('blur', returnto);
+
+      function change(event){
+           let component= event.target;
+           component.style.background='yellow';
+      }
+
+      function returnto(event){
+         let component = event.target;
+         component.style.background='white';
+      }
+    </script>
+  </body>
+
+
+  //event listener con formulario
+    <body>
+    <h1 id="title">DOM management</h1>
+    <br />
+    <form id="form">
+      Name: <input type="text" id="name" /> 
+      <br /><br />
+      last name : <input type="text" id="lastName" />
+    </form>
+    <script>
+      const form = document.getElementById('form');
+
+      form.addEventListener("focus", (event) => {
+        let component = event.target;
+        component.style.background = "#255C5B";
+      }, true);
+      form.addEventListener("blur", (event) => {
+        let component = event.target;
+        component.style.background = "white";
+      }, true);
+    </script>
+  </body>

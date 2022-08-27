@@ -1,0 +1,88 @@
+  <!--
+      <style>
+         .azul {
+            color: blue;
+          }
+      </style>
+  -->
+
+<body>
+    <h1 id="cabecero" class="azul">Ejemplo DOM JS</h1>
+    <p id="parrafo1" class="azul">Saludos</p>
+    <p id="parrafo2" class="azul">Otro Parrafo</p>
+    <p id="parrafo3" class="azul">agregamos otro</p>
+    <script>
+      /*
+      let cabecero = document.getElementById("cabecero");
+      console.log(`valor Cabecero: ${cabecero.innerHTML}`);
+      cabecero.innerHTML= "cambio de cabecero";
+      let parrafo =document.getElementById('parrafo');
+      console.log(`valor parrafo: ${parrafo.innerHTML}`);
+      parrafo.innerHTML = "Nuevo valor del parrafo";*/
+
+      //Traer muchos parrafos en un arreglo
+      /*
+      let parrafos = document.getElementsByTagName('p');
+      console.log(`Numero de parrafos ${parrafos.length}`);
+      for(i=0;i<parrafos.length;i++){
+        console.log(i, parrafos[i].innerHTML)
+      }*/
+
+      //traer por class
+      //let elements = document.getElementsByClassName("azul");
+      // Taer clase y filtro por elemento
+      let elements = document.querySelectorAll("p.azul");
+      console.log(`Numero de elemntos ${elements.length}`);
+      /*
+      for (i = 0; i < elements.length; i++) {
+        console.log(i, elements[i].innerHTML);
+      }*/
+      for (let element of elements) {
+        console.log(`${element.innerHTML}`);
+      }
+    </script>
+  </body>
+
+  // formulario
+
+  <body>
+    <form id="formulario">
+       Nombre: <input type="text" name="nombre" value="Juan">
+       <br/>
+       Apellido: <input type="text" name="apellido" value="Perez">
+       <br/>
+    </form>
+    <button onclick="mostrarValores()">Mostrar</button>
+    <div id="valores"></div>
+    <script>
+      function mostrarValores(){
+        let formulario =document.forms['formulario'];
+        let texto = '';
+        let nombre = formulario['nombre'];
+        let apellido = formulario['apellido'];
+        texto= nombre.value + '<br/>' + apellido.value;
+
+        /*
+        //todos los elentos del formulario
+        for (let element of formulario){
+          texto += element.value + '<br/>'
+        }*/
+
+        document.getElementById('valores').innerHTML= texto
+      
+      }
+    </script>
+  </body>
+
+  // Cambio de imagenes 
+   <body>
+    <h1 id="title"> DOM management</h1>
+    <button onclick="show()">Show</button>
+    <br>
+    <img src="http://globalmentoring.com.mx/imagenes/javascript.png" id="image">
+    <script>
+      function show(){
+        document.getElementById('image').src='http://globalmentoring.com.mx/imagenes/html5.png';
+      }
+    </script>
+  </body>

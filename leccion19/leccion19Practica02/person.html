@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>List of Persons</title>
+  </head>
+  <body onload="showPerson()">
+    <div class="contenedor" id="cabecero">
+      <h1>List of persons</h1>
+    </div>
+
+    <div class="contenedor">
+      <div class="elemento">
+        <ul id="person"></ul>
+      </div>
+    </div>
+
+    <div class="contenedor">
+      <div style="text-align: center">
+        <button style="cursor: pointer;" onclick="addPerson()">+</button>
+      </div>
+      <form id="form">
+        <input type="text" id="name" placeholder="Name">
+        <input type="text" id="lastName" placeholder="Last name">
+      </form>
+    </div>
+    <script src="js/Person.js"></script>
+    <script src="js/App.js"></script>
+  </body>
+</html>

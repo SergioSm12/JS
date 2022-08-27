@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Calculator App</h1>
+          <form id="form">
+            <div class="mb-3">
+              <label for="operandA">Operand A</label>
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Type the operand A"
+                id="operandA"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="operandB">Operand B</label>
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Type the operand B"
+                id="operandB"
+              />
+            </div>
+          </form>
+          <button class="btn btn-danger mb-3" onclick="sum()">Sum</button>
+          <div id="result">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/calculator.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM js management</title>
+  </head>
+  <body>
+    <h1 id="title">DOM management</h1>
+    <br />
+    <form id="form">
+      Name: <input type="text" id="name" /> 
+      <br /><br />
+      last name : <input type="text" id="lastName" />
+    </form>
+    <script>
+      const form = document.getElementById('form');
+
+      form.addEventListener("focus", (event) => {
+        let component = event.target;
+        component.style.background = "#255C5B";
+      }, true);
+      form.addEventListener("blur", (event) => {
+        let component = event.target;
+        component.style.background = "white";
+      }, true);
+    </script>
+  </body>
+</html>
